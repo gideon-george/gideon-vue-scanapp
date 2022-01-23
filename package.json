@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "ncp node _modules/dwt/dist public/resources/dwt && vue-cli-service serve",
+    "build": "vue-cli-service build && ncp node _modules/dwt/dist public/resources/dwt",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "dwt": "^17.2.0",
+    "ncp": "^2.0.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -18,7 +20,8 @@
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.5"
   },
   "eslintConfig": {
     "root": true,
